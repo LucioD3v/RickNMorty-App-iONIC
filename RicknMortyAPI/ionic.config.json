@@ -1,0 +1,7 @@
+{
+  "name": "RicknMortyAPI",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
