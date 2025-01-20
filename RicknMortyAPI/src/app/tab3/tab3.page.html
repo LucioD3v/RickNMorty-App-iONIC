@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 3
+      Acerca de
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,9 +9,21 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
+      <ion-title size="large">Acerca de</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Rick and Morty API</ion-card-title>
+      <ion-card-subtitle>Aplicación DEMO desarrollada en iONIC</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Este es un ejemplo de una aplicación desarrollada en .NET MAUI donde se consume la API rickandmortyapi.com/api/ para mostrar en un listado los personajes de la serie antes mencionada y tiene como finalidad el servir de guia para que los desarrolladores nuevos aprendan con un ejemplo sencillo. Favor de apoyar el repositorio oficial.
+    </ion-card-content>
+
+    <ion-label>V 1.0.0</ion-label>
+  </ion-card>
+  
 </ion-content>
