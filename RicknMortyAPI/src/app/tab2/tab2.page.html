@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+         Personajes
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -13,5 +13,16 @@
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <ion-list>
+    <ion-item *ngFor="let character of characters">
+      <ion-avatar slot="start">
+        <img [src]="character.image" />
+      </ion-avatar>
+      <ion-label>
+        <h2>{{character.name}}</h2>
+        <p>{{character.status}}</p>
+        <p>{{character.species}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>

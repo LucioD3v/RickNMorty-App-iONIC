@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ApiService } from '../services/api.service';
 
 @Component({
   selector: 'app-tab2',
@@ -8,6 +9,15 @@ import { Component } from '@angular/core';
 })
 export class Tab2Page {
 
-  constructor() {}
+  public characters: any = [] 
 
+  constructor(private apiService: ApiService) {
+    this.getCharacters()
+  }
+
+  async getCharacters() {
+    this.apiService.getCharacters().subscribe((res: any) => {
+      this.characters = res.results
+    })
+  }
 }
