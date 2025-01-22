@@ -12,6 +12,8 @@ export class Tab2Page {
 
   public characters: any = [];
   private loading: any;
+  searchTerm: string = '';
+
   constructor(private apiService: ApiService, private loadingController: LoadingController) {
     this.getCharacters()
   }
