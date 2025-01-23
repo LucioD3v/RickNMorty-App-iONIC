@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { ApiService } from '../services/api.service';
-import { LoadingController } from '@ionic/angular';
+import { ApiService, Character } from '../services/api.service';
+import { LoadingController, ModalController } from '@ionic/angular';
+import { DetailsComponent } from '../modals/details/details.component';
 
 @Component({
   selector: 'app-tab2',
@@ -10,11 +11,11 @@ import { LoadingController } from '@ionic/angular';
 })
 export class Tab2Page {
 
-  public characters: any = [];
+  public characters: Character[] = [];
   private loading: any;
   searchTerm: string = '';
 
-  constructor(private apiService: ApiService, private loadingController: LoadingController) {
+  constructor(private apiService: ApiService, private loadingController: LoadingController, private modalController: ModalController) {
     this.getCharacters()
   }
 
@@ -31,5 +32,16 @@ export class Tab2Page {
       this.presentLoading()
       this.characters = res.results
     })
+  }
+
+  //openDetails
+  openDetails(character: Character) {
+    this.modalController.create({
+      component: DetailsComponent,
+      componentProps: {
+        character
+      }
+    }).then((modal) => modal.present())
+    console.log(character)
   }
 }

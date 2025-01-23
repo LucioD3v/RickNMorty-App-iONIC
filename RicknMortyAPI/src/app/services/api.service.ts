@@ -12,3 +12,6 @@ export class ApiService {
     return this.httpClient.get('https://rickandmortyapi.com/api/character')
   }
 }
+
+//Tipo de dato que se espera en la respuesta de la API
+export interface Character { name: string }
